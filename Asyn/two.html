@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Chai aur code</h1>
+    <h2>hi</h2>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+    
+</body>
+<script>
+    const sayname = function(){
+        console.log("SHIVAM PANDEY")
+    };
+
+    const changeHead = function(){
+        document.querySelector('h1').innerHTML="best JS series"
+
+    }
+
+    // const changeHead = 
+    let changeMe = setTimeout(changeHead,5000)
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)
+        changeMe = null;
+        console.log("stopped")
+    })
+
+    document.querySelector('#start').addEventListener('click',function(){
+        if(!changeMe){
+            changeMe = setTimeout(changeHead,5000);
+        }
+        console.log("started");
+
+    })
+
+    
+</script>
+</html>

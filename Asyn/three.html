@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="heading">Chai aur Javascript</h1>
+    
+    <!-- <button id="stop">Stop</button>
+    <button id = "Start">Start</button> -->
+
+    <button id="play">start changing</button>
+    <button id="pause">Stop changing</button>
+    
+</body>
+<script>
+
+    function ChangeColour(){
+        document.querySelector('#heading').backgroundColor = 'green';
+
+    }
+
+    let change = setTimeout(ChangeColour,5000);
+
+    
+
+    document.querySelector('#pause').addEventListener('click',function(){
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+    // let sayDate = function(str){
+    //     console.log(str, Date.now());
+    // }
+
+    // // let intervaliId = 
+    // // setInterval(sayDate,1000,"hi")
+
+     
+
+    //  document.querySelector('#stop').addEventListener('click',function(){
+    //     clearInterval(intervaliId);
+    //     intervaliId = null;
+    //  })
+
+    //  document.querySelector('#Start').addEventListener('click',function(){
+    //     if(!intervaliId)
+    //     { intervaliId = setInterval(sayDate,1000,"hi")}
+    //  })
+
+
+    //  let intervaliId = 
+    // setInterval(sayDate,1000,"hi")
+
+    
+</script>
+</html>

@@ -1,0 +1,142 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- // xmlhttp request used previously it is related to AJAX
+    Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+<!-- 
+<div class="card">
+    <h1>Lets get a image from JSON </h1>
+    <img id="loadedimage"  alt="Img from JSON" width="300">
+</div>
+    
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl, true); // Adjust path if needed
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
+        const imageUrl = response.image;
+
+        // Set the image source
+        document.getElementById("loadedImage").src = imageUrl;
+      } else {
+        console.error("Failed to fetch JSON");
+      }
+    };
+
+    xhr.onerror = function () {
+      console.error("Request error");
+    };
+
+    xhr.send(); -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //  const xhr = new XMLHttpRequest();
+    //  xhr.open('GET', requestUrl) // it is not called yet
+    // console.log(xhr.readyState);
+    //   xhr.send() // now it is called
+
+    //  console.log("here");
+    // xhr.onreadystatechange = function(){
+    //     console.log(xhr.readyState)
+    //     if(xhr.readyState === 3){
+    //         const data = JSON.parse(this.responseText);
+    //          console.log(typeof data);
+    //         console.log(data.followers);
+    //     }
+    // }
+    
+
+<!-- </script>
+</html> --> 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Image and Name from GitHub API</title>
+    <style>
+        .card {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .card img {
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .card h1 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Loading...</h1>
+        <img id="loadedimage"  alt="Img from GitHub" width="100">
+    </div>
+    
+    <script>
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", requestUrl, true); // Adjust path if needed
+
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                const imageUrl = response.avatar_url;  // Profile image URL
+                const userName = response.login;  // Username
+
+                // Set the image source and username
+                document.getElementById("loadedimage").src = imageUrl;
+                document.querySelector(".card h1").textContent = userName;
+            } else {
+                console.error("Failed to fetch JSON");
+            }
+        };
+
+        xhr.onerror = function () {
+            console.error("Request error");
+        };
+
+        xhr.send();
+    </script>
+</body>
+</html>
